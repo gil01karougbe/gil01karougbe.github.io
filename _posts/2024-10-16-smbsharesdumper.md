@@ -65,35 +65,35 @@ options:
 ```
 python3 smbsharesdumper.py -d DOMAIN -u USER -p PASS --targets-file /Path/To/targets.txt --list-shares
 ```
-![list-shares](https://github.com/gil01karougbe/gil01karougbe.github.io/tree/main/assets/img/tools/smbsharesdumper1.png)
+![list-shares](./assets/img/tools/smbsharesdumper1.png)
 <br>
 
 ### 2-list content
 ```
 python3 smbsharesdumper.py -d DOMAIN -u USER -p PASS --host IP --list-content --sharename SHARE
 ```
-![list-shares](https://github.com/gil01karougbe/gil01karougbe.github.io/tree/main/assets/img/tools/smbsharesdumper1.png)
-<br>
+![list-shares](./assets/img/tools/smb_listcontent1.png)<br>
+![list-shares](./assets/img/tools/smb_listcontent2.png)
 
 ### 3-dump shares
 ```
 python3 smbsharesdumper.py -d DOMAIN -u USER -p PASS --targets-file /Path/To/targets.txt --dump --destination OUTPUT_FOLDER
 ```
-![list-shares](https://github.com/gil01karougbe/gil01karougbe.github.io/tree/main/assets/img/tools/smbsharesdumper1.png)
-<br>
+![list-shares](./assets/img/tools/smbsharesdumper2.png)<br>
+![list-shares](./assets/img/tools/smb_dump2.png)
 
 ### 4-dump a single file
 ```
 python3 smbsharesdumper.py  DOMAIN/USER:PASS@IP --dumpfile --share SHARE --file REMOTE_FILE --destination OUTPUT_FOLDER
 ```
-![list-shares](https://github.com/gil01karougbe/gil01karougbe.github.io/tree/main/assets/img/tools/smbsharesdumper1.png)
+![list-shares](./assets/img/tools/smb_dumpfile.png)
 <br>
 
 ### 5-Upload a file
 ```
 python3 smbsharesdumper.py  DOMAIN/USER:PASS@IP --upload --share SHARE --folder REMOTE_FOLDER --file LOCAL_FILE
 ```
-![list-shares](https://github.com/gil01karougbe/gil01karougbe.github.io/tree/main/assets/img/tools/smbsharesdumper1.png)
+![list-shares](./assets/img/tools/smb_uploqd.png)
 <br>
 
 # Notes
