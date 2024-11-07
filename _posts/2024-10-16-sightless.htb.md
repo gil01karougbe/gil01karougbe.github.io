@@ -32,5 +32,3 @@ tags: ["Linux", "CVE-2022-0944"]
 
 
 ## References
-[]()
-[]()

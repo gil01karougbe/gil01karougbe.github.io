@@ -36,5 +36,3 @@ tags: ["Active Directory", "BloodHound", "DACL Abuse" ,"ESC9"]
 
 
 ## References
-[]()
-[]()

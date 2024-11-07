@@ -2,7 +2,7 @@
 layout: post
 title:  "HackTheBox | Chemistry"
 description: "walkthrough of chemistry machine, an Easy rated box from HackTheBox"
-author: "_lig10"
+author: "lig10"
 date: "2024-10-16"
 pin: true
 image:
@@ -36,5 +36,3 @@ tags: ["Linux", "CVE-2024-23346","CVE-2024-23334"]
 
 
 ## References
-[]()
-[]()

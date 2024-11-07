@@ -31,5 +31,3 @@ tags: ["ThyHackMe", "Stored XSS", "Iptables Rules", "TLS Traffic Decryption"]
 
 
 ## References
-[]()
-[]()
