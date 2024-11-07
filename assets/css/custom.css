@@ -1,0 +1,12 @@
+.red-text {
+    color: red;
+    font-weight: bold;
+}
+
+.teal-text {
+    color: teal;
+}
+
+p {
+    text-align: justify;
+}

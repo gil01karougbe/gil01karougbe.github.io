@@ -1,21 +1,28 @@
 ---
 layout: post
-title:  "smbsharesdumper"
+title:  "Tools | smbsharesdumper"
+description: "smbsharesdumper a tool to dump and manage multiples smb shares over the network"
+author: "_lig10"
 date: "2024-10-16"
+image:
+  path: ../assets/img/tools/tool101.png
+  alt: "smbsharesdumper"
 category: "Tools"
 tags: ["Active Directory", "SMB", "SMB Shares", "Dump"]
 ---
 
 
-# What is smbsharesdumper?
+## What is smbsharesdumper?
 A python based tools to manage SMB Shares accross an active directory network.
 
-# Why i needed it?
-When i enumerate a host and find multiple shares i usualy use `smbclient \\\\host\\shareX` to connect to each and download content one by one using either `get <file>` or `mget <folder>`. This was rudimentaty for me especially when we think that a user can have access to multiples shares on multiples hosts accross the network. Yeah...there is place for automation here. I wanted to put my coding knownledge in practice in a project and i was planing to build an Active Directory Lab (I will share the lab later on another post) to configure vulnerables senarios myself in order to level up my AD pentesting skills.
+## Why i needed it?
+When i enumerate a host and find multiple shares i usualy use `smbclient \\\\host\\shareX` to connect to each and download content one by one using either `get <file>` or `mget <folder>`.
+
+This was rudimentary for me especially when we think that a user can have access to multiples shares on multiples hosts accross the network. Yeah...there is place for automation here. I wanted to put my coding knownledge in practice in a project and i was planing to build an Active Directory Lab (I will share the lab later on another post) to configure vulnerables senarios myself in order to level up my AD pentesting skills.
 
 With smbsharesdumper, download all shares a user have access accross the network once and focus on anlysing the content to find juicy staff. You can either use `grep -iR 'keyword'` or browse the downloaded content graphically.
 
-# Usage
+## Usage
 ```
 $ python3 smbsharesdumper.py                                                                    
 usage: smbsharesdumper.py [-h] [-d DOMAIN] [-u USERNAME] [-p PASSWORD] [-H HASHES] [--host HOST] [-P [destination port]] [--folder FOLDER]
@@ -59,52 +66,52 @@ options:
                         list of ipaddress of targets
 ```
 
-# Examples
+## Examples
 
-### 1-list shares
+1. list shares
 ```
 python3 smbsharesdumper.py -d DOMAIN -u USER -p PASS --targets-file /Path/To/targets.txt --list-shares
 ```
 ![list-shares](./assets/img/tools/smbsharesdumper1.png)
 <br>
 
-### 2-list content
+2. list content
 ```
 python3 smbsharesdumper.py -d DOMAIN -u USER -p PASS --host IP --list-content --sharename SHARE
 ```
 ![list-shares](./assets/img/tools/smb_listcontent1.png)<br>
 ![list-shares](./assets/img/tools/smb_listcontent2.png)
 
-### 3-dump shares
+3. dump shares
 ```
 python3 smbsharesdumper.py -d DOMAIN -u USER -p PASS --targets-file /Path/To/targets.txt --dump --destination OUTPUT_FOLDER
 ```
 ![list-shares](./assets/img/tools/smbsharesdumper2.png)<br>
 ![list-shares](./assets/img/tools/smb_dump2.png)
 
-### 4-dump a single file
+4. dump a single file
 ```
 python3 smbsharesdumper.py  DOMAIN/USER:PASS@IP --dumpfile --share SHARE --file REMOTE_FILE --destination OUTPUT_FOLDER
 ```
 ![list-shares](./assets/img/tools/smb_dumpfile.png)
 <br>
 
-### 5-Upload a file
+5. Upload a file
 ```
 python3 smbsharesdumper.py  DOMAIN/USER:PASS@IP --upload --share SHARE --folder REMOTE_FOLDER --file LOCAL_FILE
 ```
 ![list-shares](./assets/img/tools/smb_uploqd.png)
 <br>
 
-# Notes
+## Notes
 The netexec and i guess his format crackmapexec does the job too.
 
-### 1-list shares
+1. list shares
 ```
 nxc smb <NETWORK> -u USER -p PASS --shares
 ```
 
-### 2-dump shares
+2. dump shares
 ```
 nxc smb <NETWORK> -u USER -p PASS -M spider_plus -o DOWNLOAD_FLAG=True OUTPUT_FOLDER=.
 ```

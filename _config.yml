@@ -14,12 +14,12 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: lig10 # the main title
+title: _lig10 # the main title
 
 tagline: Personal Blog # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Web Security, Active Directory, Red Teaming, Android Security.
+  Web Security, Active Directory, Red Teaming, Android Security...and more to come
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -34,7 +34,7 @@ twitter:
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: lig10
+  name: _lig10
   email: essognimgillekarougbe01@gmail.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
