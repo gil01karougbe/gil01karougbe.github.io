@@ -2,7 +2,6 @@
 layout: post
 title:  "HackTheBox | Sightless"
 description: "walkthrough of sightless machine, an Easy rated box from HackTheBox"
-author: "_lig10"
 date: "2024-10-16"
 pin: false
 image:

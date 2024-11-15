@@ -2,7 +2,6 @@
 layout: post
 title:  "HackTheBox | Certified"
 description: "walkthrough of certified machine, a Medium rated box from HackTheBox"
-author: "gilleskarougbe"
 date: "2024-10-16"
 pin: false
 image:

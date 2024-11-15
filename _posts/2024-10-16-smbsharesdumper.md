@@ -2,7 +2,6 @@
 layout: post
 title:  "Tools | smbsharesdumper"
 description: "smbsharesdumper a tool to dump and manage multiples smb shares over the network"
-author: "_lig10"
 date: "2024-10-16"
 pin: true
 image:
