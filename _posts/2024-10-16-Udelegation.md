@@ -2,7 +2,6 @@
 layout: post
 title:  "Unconstrained Delegation: The Key to kingdom"
 description: "a break down of all in know about microsoft kerberos uncontrained delegration. This is more a review than a discovery"
-author: "_lig10"
 date: "2024-10-16"
 pin: true
 category: "Active Directory"

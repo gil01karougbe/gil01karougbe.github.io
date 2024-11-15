@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "TryHackMe | Whyhackme"
-author: "lig10"
 description: "Walkthrough of whyhackme machine, a Medium rated box from TryHackme"
 date: "2024-11-11"
 pin: true
