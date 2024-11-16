@@ -12,7 +12,7 @@ tags: ["ThyHackMe", "Stored XSS", "Iptables Rules", "TLS Traffic Decryption"]
 ---
 ## Introduction
 ------------------------------------------------------------------------------------------
-[WhyHackMe](https://tryhackme.com/r/room/whyhackme) is a medium linux box from tryhackme. It has 3 ports opens 21 running ftp, 22 running ssh and 80 running a web application. Th foothold consist of exploiting a stored XSS vulnerability to exfiltrate a critical file that can be dicovered on the ftp server. The privilege escalation part involve playing with ipatables rules and decrypting some TLS traffic to access a backdoor runing on a particular port. From here get a reverse shell as www-data who his allowed to run any command as root without a password.
+[WhyHackMe](https://tryhackme.com/r/room/whyhackme) is a medium rated linux box from tryhackme. It has 3 ports opens 21 running ftp, 22 running ssh and 80 running a web application. The foothold consist of exploiting a stored XSS vulnerability to exfiltrate a critical file that can be dicovered on the ftp server. The privilege escalation part involve playing with ipatables rules and decrypting some TLS traffic to access a backdoor runing on a particular port. From here get a reverse shell as www-data who his allowed to run any command as root without a password.
 
 ------------------------------------------------------------------------------------------
 
