@@ -16,9 +16,8 @@ tags: ["ThyHackMe", "Stored XSS", "Iptables Rules", "TLS Traffic Decryption"]
 
 ------------------------------------------------------------------------------------------
 
-
 ## Enumeration
-
+We start by full scan to discover all tcp opened ports...
 ### All Open Ports
 ```bash
 rustscan -a 10.10.4.243

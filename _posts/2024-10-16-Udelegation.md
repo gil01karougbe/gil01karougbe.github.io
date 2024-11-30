@@ -10,10 +10,14 @@ tags: ["Active Directory", "kerberos double-hop problem", "kerberos delegation",
 
 ## Introduction
 <p style="text-align: justify;">
-The <b>double-hop problem</b> emerged in the early 2000s as applications required seamless user authentication across multiple services. To address this, Microsoft introduced Kerberos delegation in Windows Server 2003, enabling trusted accounts (user or computer) to act on behalf of other users across services. The classic senarios of why delegation is needed is when a user authenticates to a web server, using Kerberos or other protocols, and the server wants to nicely integrate with a SQL backend. Unconstrained delegation allows an account with the <b>TrustedForDelegation</b> attribute to impersonate any user—except those in <em>Protected Users</em> group or marked as <em>Account is sensitive and cannot be delegated</em>.
+The <b>double-hop problem</b> emerged in the early 2000s as applications required seamless user authentication across multiple services. You can find in references some good articles about this...</p>
+
+![delegation](../assets/img/blog/delegation/dhop.png)
+<p style="text-align: justify;">
+To address this, Microsoft introduced Kerberos delegation in Windows Server 2003, enabling trusted accounts (user or computer) to act on behalf of other users across services. The classic senarios of why delegation is needed is when a user authenticates to a web server, using Kerberos or other protocols, and the server wants to nicely integrate with a SQL backend. Unconstrained delegation allows an account with the <b>TrustedForDelegation</b> attribute to impersonate any user—except those in <em>Protected Users</em> group or marked as <em>Account is sensitive and cannot be delegated</em>.
 </p>
 
-![delegation](./assets/img/blog/delegation/delegation1.png)
+![delegation](../assets/img/blog/delegation/delegation1.png)
 
 ## Exploitation MindMap
 ![KUD Mindmap](https://www.thehacker.recipes/assets/KUD%20mindmap.DDYXGSWu.png)
