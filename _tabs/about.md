@@ -14,9 +14,9 @@ This Blog will be more about Web apps security, Active Directory, Android Hackin
 
 
 ## Education
-- [2020-2024] CyberSecurity State Engineer  (National School of Applied Science Oujda, Morocco)<br>
-- [2017-2019] High School  (Scientific High School Lomé, Togo)
-  
+- 🎓[2020-2024] CyberSecurity State Engineer  (National School of Applied Science Oujda, Morocco)<br>
+- 🎓[2017-2019] High School  (Scientific High School Lomé, Togo)
+
 
 ## Skills
 - Networking: TCP/IP, Switching, Routing, Cisco solutions.
@@ -26,6 +26,9 @@ This Blog will be more about Web apps security, Active Directory, Android Hackin
 - Android Pentesting: Reverse Enginering, Instrumentation with Frida.
 - Red Teaming: Malware Dev, AV Evasion.
 
+## Experience
+- [Feb 2024-Jul 2024]  Internship  HenceForth, R&D, Rabat, Morocco.<br>
+- [Jun 2023-Aug 2023]  Internship  Dataprotect, SOC, Casablanca, Morocco.
 
 ## Certifications 
 - [Certified Red Team Professional (CRTP)](https://api.accredible.com/v1/auth/invite?code=2eedd227c5af9d01a80a&credential_id=e2af0bb8-9e80-4c4b-83ce-0b7a6e80e77b&url=https%3A%2F%2Fwww.credential.net%2Fe2af0bb8-9e80-4c4b-83ce-0b7a6e80e77b&ident=15b3aa12-191c-40aa-b673-ad9e0161253e)
@@ -36,31 +39,19 @@ This Blog will be more about Web apps security, Active Directory, Android Hackin
 - [Tryhackme Jr Pentesting](../assets/img/certificate/THM-jrpentester.png)
 
 ## Some Projects
-1. insecure deserialization poc
-[nodeserialize lab](https://github.com/gil01karougbe/nodeserialize-poc)[php deserialization lab](https://github.com/gil01karougbe/phpserialization-poc)
+1. insecure deserialization POCs
+I have Built 02 poc web apps that uses serialized tokens for session management purpose. The first one [nodeserialize lab](https://github.com/gil01karougbe/nodeserialize-poc) is a nodejs application that serialize a User json object and return it to the client as a Cookie and the later one [php lab](https://github.com/gil01karougbe/phpserialization-poc) is a PHP application the serialize a User Class object. Requests made to authenticated endpoints later on have the Cookie header which got deserialized on the server side allowing remote code execution. You can find these Pocs doker images [here](https://hub.docker.com/repositories/lig10) for testing purpose.
+
+2. myadlab
+I have configured an Active Directory domain with three machines (dc, pc01, srv01) and installed on the DC a Certificate Authority. In an assumed breach scenarios, i have practice enumeration of AD objects using powershell and  performed virious Kerberos attacks (ASRepRoasting, Kerberoasting, Golden/Silver/Diamond Tickets, Delegation abuse). I have configured and exploited following the specterOps ADCS white paper ESC1 to ESC4 and ESC7 privilege escalation senarios. I have also  practiced some persistence techniques (AdminSDHolder, DSRM, SkeletonKey, Remote Services Security Descriptors). Checkt it [here](https://github.com/gil01karougbe/myadlab)
 
 
-2. jwt hacking poc
-[jwt hacking lab](https://github.com/gil01karougbe/jwthacking-poc)
+3. frida for all the things
+In this project i have created various instrumentation scripts aimed at extracting and modifying arguments passed to functions or altering function return values. One of the key achievements in this project was the instrumentation of the `AmsiScanBuffer()` API from `amsi.dll`. By modifying the `AMSI_RESULT`value returned by `AmsiScanBuffer()` call, I was able to bypass AMSI checks, allowing the execution of PowerShell scripts that would normally be blocked. Check FridaForAllTheThings [here](https://github.com/gil01karougbe/FridaScriptsForAllTheThings)
 
 
 3. smbsharesdumper
 [smbsharesdumper](https://github.com/gil01karougbe/smbsharesdumper)
-
-
-4. ldapad
-[ldapad](https://github.com/gil01karougbe/nodeserialize-poc)
-
-
-5. myadlab
-[my ad lab](https://github.com/gil01karougbe/myadlab)
-
-
-6. frida for all the things
-[fridaforallthethings](https://github.com/gil01karougbe/FridaScriptsForAllTheThings)
-
-7. neth4ack
-[jwt hacking lab](https://github.com/gil01karougbe/netHack)
 
 
 ## CTF Profiles
