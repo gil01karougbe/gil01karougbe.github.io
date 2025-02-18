@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "HackTheBox | Chemistry"
-description: "walkthrough of chemistry machine, an Easy rated box from HackTheBox"
-date: "2024-10-16"
-pin: false
+title:  "HackTheBox | EscapeTwo"
+description: "walkthrough of EscapeTwo machine, a Medium rated box from HackTheBox"
+date: "2025-01-13"
+pin: true
 image:
-  path: ../assets/img/ctf/hackthebox/chemistry/chemistry1.png
-  alt: "chemistry.htb"
+  path: ../assets/img/ctf/hackthebox/escapetwo/escapetwo1.png
+  alt: "escapetwo.htb"
 category: "HackTheBox"
-tags: ["Linux", "CVE-2024-23346","CVE-2024-23334"]
+tags: ["Active Directory", "MSSQL", "BloodHound", "DACL Abuse", "ESC4"]
 ---
 
 ## Introduction
