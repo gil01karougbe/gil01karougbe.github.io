@@ -7,7 +7,7 @@ order: 4
 ## WhoAmI
 ![Whoami meme](../assets/img/default/whoami.png)<br>
 <p style="text-align: justify;">
-I'm <em>gilles karougbe</em>, a cybersecutity enthusiast and fresh graduate as information security and cybersecurity state engineer. I'm always looking for ways to sharpen my hacking skills to better contribute to the filed. I have started this blog to document my journey, share my ctf walkthroughs and my  thoughts. My goal is to continuously learn, improve and grow. I'm not an expert (at least not yet hahaha...), if you find some gaps in my  knowledge just make sure you teaches me on your way—I'm probaly not aware of them. I hope this blog becomes a valuable resource for others on a similar path.</p>
+I'm <em>gilles karougbe</em>, an offensive security consultant at dataprotect (casablanca, Morocco) with 2 years global experience in cybersecurity. I'm always looking for ways to sharpen my hacking skills to better contribute to the filed. I have started this blog to document my journey, share my ctf walkthroughs and my  thoughts. My goal is to continuously learn, improve and grow. I'm not an expert (at least not yet hahaha...), if you find some gaps in my  knowledge just make sure you teaches me on your way—I'm probaly not aware of them. I hope this blog becomes a valuable resource for others on a similar path.</p>
 
 <p style="text-align: justify;">
 This Blog will be more about Web apps security, Active Directory, Android Hacking, Malware Dev, Frida, Defense evasion on the road toward Red Teaming ops...</p> 
@@ -27,12 +27,16 @@ This Blog will be more about Web apps security, Active Directory, Android Hackin
 - Red Teaming: Malware Dev, AV Evasion.
 
 ## Experience
+- [Jan 2025-Present]   Pentester  Dataprotect, Offensive Security, Casablanca, Morocco.<br>
 - [Feb 2024-Jul 2024]  Internship  HenceForth, R&D, Rabat, Morocco.<br>
 - [Jun 2023-Aug 2023]  Internship  Dataprotect, SOC, Casablanca, Morocco.
 
 ## Certifications 
+- [Offensive Security Certified Professional (OSCP+/OSCP)](https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/170317808)
 - [Certified Red Team Professional (CRTP)](https://api.accredible.com/v1/auth/invite?code=2eedd227c5af9d01a80a&credential_id=e2af0bb8-9e80-4c4b-83ce-0b7a6e80e77b&url=https%3A%2F%2Fwww.credential.net%2Fe2af0bb8-9e80-4c4b-83ce-0b7a6e80e77b&ident=15b3aa12-191c-40aa-b673-ad9e0161253e)
+- [Certified Red Team Analyst (CRTA)](https://api.accredible.com/v1/frontend/credential_website_embed_image/certificate/126052442)
 - [HackTheBox Dante Prolab](../assets/img/certificate/Dante.pdf)
+- [HackTheBox Zephyr Prolab](../assets/img/certificate/Zephyr.pdf)
 - [Pratical Ethical Hacking (PEH)](../assets/img/certificate/peh.pdf)
 - [Frida Labs](../assets/img/certificate/mhl-fridalabs.pdf)
 - [Tryhackme Comptia Pentest+](../assets/img/certificate/THM-pentest+.png)
