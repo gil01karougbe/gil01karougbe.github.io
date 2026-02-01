@@ -1,20 +1,20 @@
 ---
 layout: post
 title:  "Fraude à la carte bancaire : les risques auxquels nous sommes réellement exposés et les gestes barrières à adopter"
-description: "Découvrez les principaux risques liés aux fraudes à la carte bancaire et adoptez les bons réflexes pour protéger vos données. Des conseils simples et efficaces pour sécuriser votre utilisatons de la carte bancaire et limiter les dégats en cas de fraude"
+description: "Découvrez les principaux risques liés aux fraudes à la carte bancaire et adoptez les bons réflexes pour protéger vos données. Des conseils simples et efficaces pour sécuriser votre utilisation de la carte bancaire et limiter les dégats en cas de fraude"
 date: "2025-03-23"
 pin: false
-category: "Sensibilisation sur la Fraude à la carte bancaire"
+category: "Sensibilisation sur les Fraudes à la carte bancaire"
 tags: ["Fraude", "Carte Bancaire", "Industrie du Carding", "Phishing"]
 ---
 
 ## Prourquoi j'en parle et qui suis je pour en parler?
 <p style="text-align: justify;">
-Tout d'abord, je suis un professionnel en cybersécurité, spécialiste des tests d'intrusion. Mon travail consiste principalement à étudier les systèmes informatiques (applications, serveurs, réseaux, ...etc) afin d'identifier des vulnérabilités ou des défauts que je remonte aux propriétaires pour qu'ils soient corrigés. Cela permet d'éviter qu'ils soient exploités par des hackers pour causer des dégâts.
+Tout d'abord, je suis un professionnel en cybersécurité, spécialiste des tests d'intrusion. Mon travail consiste principalement à étudier les systèmes informatiques (applications, serveurs, réseaux, ...etc) afin d'identifier des vulnérabilités ou des défauts que je remonte aux propriétaires (clients) pour qu'elles soient corrigés. Cela permet d'éviter qu'elles soient exploitées par des acteurs malveillants (hackers) pour causer des dégâts.
 </p>
 
 <p style="text-align: justify;">
-La section locale Rabat de notre chère CESTOM (Coordination des Etudiants et Stagiaires Togolais au Maroc) par le biais du bureau a fait appel à mon collegue egbidji et à moi pour échanger sur <b>la sécurité de nos données bancaires</b> lors du webinaire qui s'est tenu ce 22 mars dernier. Je pense qu'il est éssentiel d'en parler parce que d'une part il est question d'argent, d'autres part tout le monde peut être victime de fraude à la carte bancaire et développer des reflexes barières est une necessité pour s'en protéger. Je me suis très rapidement penché sur le sujet afin comprendre les technogies bancaires actuelle et les techniques qui peuvent être utlisé pour nous voler nos données bancaire puis notre argent.
+La section locale Rabat de notre chère CESTOM (Coordination des Etudiants et Stagiaires Togolais au Maroc) par le biais du bureau a fait appel à mon collegue egbidji et à moi pour échanger sur <b>la sécurité de nos données bancaires</b> lors du webinaire qui s'est tenu ce 22 mars 2025. Je pense qu'il est éssentiel d'en parler parce que d'une part il est question d'argent, d'autres part tout le monde peut être victime de fraude à la carte bancaire et développer des reflexes barières est une necessité pour s'en protéger. Je me suis très rapidement penché sur le sujet afin comprendre les technogies bancaires actuelle et les techniques qui peuvent être utlisé pour nous voler nos données bancaire puis notre argent.
 </p>
 <p style="text-align: justify;">
 Sans vous mentir, ce qu'on peut lire par-ci et par-là est d'autant fascinant pour moi en tant que professionnel de la cybersécurité qu'inquiétant en tant qu'utilisateur des services bancaires. Par example seulement ce 20 mars dernier au pouvais lire dans le media hpress "Plus de 31.000 CB marocaines en circulation sur le dark web" ou sur media24 "Cybersécurité: La réalité de la fuite de 31.000 cartes bancaires dans le Dark web" et les questions que vous vous poser sont probablement les mêmes que moi:

