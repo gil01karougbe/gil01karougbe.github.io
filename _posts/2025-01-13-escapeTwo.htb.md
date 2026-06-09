@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "HackTheBox | EscapeTwo"
-description: "walkthrough of EscapeTwo machine, a Medium rated box from HackTheBox"
+description: "walkthrough of the EscapeTwo machine, a Medium rated box from HackTheBox"
 date: "2025-01-13"
 pin: true
 image:
@@ -159,7 +159,7 @@ nxc smb sequel.htb -u rose -p KxEPkKe6R8su -M spider_plus -o DOWNLOAD_FLAG=True 
 ![spider_plus](./assets/img/ctf/hackthebox/escapetwo/escapetwo4.png)
 
 <p style="text-align: justify;">
-Within the <strong>"Accounting Department"</strong> file share, we discover two Excel files: <code>accounting_2024.xlsx</code> and <code>accounts.xlsx</code>. However, both files appear to be corrupted and cannot be opened normally. After some research on Excel file signatures, we find that valid <code>.xlsx</code> files should start with the magic bytes <code>50 4B 03 04</code>. By restoring the correct file signature, we are able to successfully open both documents. Further analysis of <code>accounts.xlsx</code> reveals multiple sets of credentials.
+Within the <strong>"Accounting Department"</strong> file share, we discover two Excel files: <code>accounting_2024.xlsx</code> and <code>accounts.xlsx</code>. However, both files appear to be corrupted and cannot be opened normally. After researching Excel file signatures, we find that valid <code>.xlsx</code> files should start with the magic bytes <code>50 4B 03 04</code>. By restoring the correct file signature, we are able to successfully open both documents. Further analysis of <code>accounts.xlsx</code> reveals multiple sets of credentials.
 </p>
 
 ![Accounting Department Share](./assets/img/ctf/hackthebox/escapetwo/escapetwo5.png)
@@ -191,10 +191,10 @@ Once connected as the <code>sql_svc</code> user, we are able to read the SQL Ser
 ![Rsql-Configuration.INI](./assets/img/ctf/hackthebox/escapetwo/escapetwo10.png)
 
 <p style="text-align: justify;">
-Next, we perform a password spray using the <code>sql_svc</code> password recovered early from the SQL Server installation configuration file. This results in a successful credential reuse, as the same password is valid for the domain user <code>ryan</code>.
+Next, we perform a password spray using the <code>sql_svc</code> password recovered earlier from the SQL Server installation configuration file. This results in a successful credential reuse, as the same password is valid for the domain user <code>ryan</code>.
 </p>
 
-![Password Spaying](./assets/img/ctf/hackthebox/escapetwo/escapetwo11.png)
+![Password Spraying](./assets/img/ctf/hackthebox/escapetwo/escapetwo11.png)
 
 <p style="text-align: justify;">
 We then connect to the domain controller using <code>evil-winrm</code>, as the user <code>ryan</code> is a member of the <strong>Remote Management Users</strong> group, which allows remote WinRM access.
@@ -238,11 +238,11 @@ net rpc password "ca_svc" "newP@ssword2022" -U "sequel.htb"/"ryan"%"WqSZAF6CysDQ
 ![WriteOwner Abuse](./assets/img/ctf/hackthebox/escapetwo/escapetwo18.png)
 
 <p style="text-align: justify;">
-By abusing the <code>GenericAll</code> permissions on the vulnerable certificate template (<strong>ESC4</strong>), we modify the template configuration to make it exploitable under <strong>ESC1</strong>. Specifically, we update the template to allow user-supplied Subject Alternative Names (UPN). Once the template is weakened, we exploit ESC1 by requesting a certificate on behalf of the <code>administrator</code> account. The resulting certificate, combined with the <code>KPINIT</code> extension, allows us to authenticate as a domain administrator, recover the NT hash, and gain full access to the domain controller via WinRM.
+By abusing the <code>GenericAll</code> permissions on the vulnerable certificate template (<strong>ESC4</strong>), we modify the template configuration to make it exploitable under <strong>ESC1</strong>. Specifically, we update the template to allow user-supplied Subject Alternative Names (UPN). Once the template is weakened, we exploit ESC1 by requesting a certificate on behalf of the <code>administrator</code> account. The resulting certificate, combined with the <code>PKINIT</code> extension, allows us to authenticate to the DC as the builtin domain administrator (RID 500), recover the NT hash, and gain full access to the domain controller via WinRM.
 </p>
 
 ```bash
-# Modifing the Certificate Template to introduice ESC1
+# Modifying the Certificate Template to introduce ESC1
 certipy template -username ca_svc@sequel.htb -password 'newP@ssword2022' -template DunderMifflinAuthentication -save-old -dc-ip $dc
 
 # Administration Certificate

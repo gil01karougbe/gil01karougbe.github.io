@@ -5,7 +5,7 @@ description: "smbsharesdumper a tool to dump and manage multiples smb shares ove
 date: "2024-10-16"
 pin: true
 image:
-  path: ../assets/img/tools/tool101.png
+  path: ../assets/img/tools/sharesdumper.png
   alt: "smbsharesdumper"
 category: "Tools"
 tags: ["Active Directory", "SMB", "SMB Shares", "Dump"]
@@ -13,14 +13,14 @@ tags: ["Active Directory", "SMB", "SMB Shares", "Dump"]
 
 
 ## What is smbsharesdumper?
-A python based tools to manage SMB Shares accross an active directory network.
+A Python-based tool to enumerate, download, and manage SMB shares across an Active Directory network.
 
-## Why i needed it?
-When i enumerate a host and find multiple shares i usualy use `smbclient \\\\host\\shareX` to connect to each and download content one by one using either `get <file>` or `mget <folder>`.
+## Why I needed it?
+When I enumerate a host and find multiple shares, I usually reach for `smbclient \\\\host\\shareX` to connect to each one and pull content down piece by piece using `get <file>` or `mget <folder>`.
 
-This was rudimentary for me especially when we think that a user can have access to multiples shares on multiples hosts accross the network. Yeah...there is place for automation here. I wanted to put my coding knownledge in practice in a project and i was planing to build an Active Directory Lab (I will share the lab later on another post) to configure vulnerables senarios myself in order to level up my AD pentesting skills.
+That gets tedious fast, especially when a single user can have access to multiple shares spread across multiple hosts on the network. There's clearly room for automation here. I also wanted to put my coding knowledge to practice through a real project — and at the time I was planning to build an Active Directory lab (I'll share that in a later post) to set up vulnerable scenarios myself and level up my AD pentesting skills. smbsharesdumper was the perfect excuse to do both.
 
-With smbsharesdumper, download all shares a user have access accross the network once and focus on anlysing the content to find juicy staff. You can either use `grep -iR 'keyword'` or browse the downloaded content graphically.
+With smbsharesdumper, you pull down everything a user has access to across the network in one shot, then focus entirely on analysing the content for anything juicy. From there you can either run `grep -iR 'keyword'` to hunt for specific strings or browse the downloaded content graphically.
 
 ## Usage
 ```
@@ -104,7 +104,7 @@ python3 smbsharesdumper.py  DOMAIN/USER:PASS@IP --upload --share SHARE --folder 
 <br>
 
 ## Notes
-The netexec and i guess his format crackmapexec does the job too.
+netexec (and its predecessor crackmapexec) can cover the same ground too.
 
 1. list shares
 ```
